@@ -2,10 +2,10 @@
     "manifest_version": 3,
     "name": "Cookie Blocker",
     "version": "1.0",
-    "description": "Blocks websites from sharing cookies or user data with specified tracking domains.",
+    "description": "Prevents websites from sharing cookies or user data with specified tracking domains.",
     "permissions": [
-      "webRequest",
-      "webRequestBlocking",
+      "declarativeNetRequest",
+      "declarativeNetRequestWithHostAccess",
       "cookies",
       "storage",
       "tabs",
@@ -18,8 +18,25 @@
       "service_worker": "background.js"
     },
     "icons": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+    //   "16": "icons/icon16.png",
+    //   "48": "icons/icon48.png",
+    //   "128": "icons/icon128.png"
+    },
+    "action": {
+      "default_title": "Cookie Blocker",
+      "default_icon": {
+        // "16": "icons/icon16.png",
+        // "48": "icons/icon48.png",
+        // "128": "icons/icon128.png"
+      }
+    },
+    "declarative_net_request": {
+      "rule_resources": [
+        {
+          "id": "ruleset_1",
+          "enabled": true,
+          "path": "rules.json"
+        }
+      ]
     }
   }
